@@ -1,5 +1,9 @@
 # Suffix Generation Evaluation
 
+This is the independently versioned suffix-reconstruction evaluator for
+*Forgetting by Design*. The complete workflow pins it as a submodule in the
+[top-level experiment repository](https://github.com/DogukanBaysal/Code-Unlearning).
+
 This project evaluates a Hugging Face causal language model on a Hugging Face dataset by:
 
 1. Reading a prefix, target suffix, and UUID from each dataset row.
@@ -19,7 +23,8 @@ The thesis uses this evaluator for three reconstruction views:
 | Retain | `dbaysal/retain-half` | `prefix` / `suffix` | `code`, BLEU |
 | Held-out / approximate | `dbaysal/approximate` | `prefix` / `suffix` | `code`, BLEU |
 
-The easiest way to evaluate all views plus functional correctness is the repository-level driver:
+The easiest way to evaluate all views plus functional correctness is the top-level
+repository driver (run this from a complete recursive checkout):
 
 ```bash
 python scripts/run_adapter_eval_suite.py \
@@ -35,7 +40,10 @@ python scripts/run_adapter_eval_suite.py \
   --top-p 0.95
 ```
 
-Run that command from the repository root. The driver writes one config containing a `datasets:` list, runs each dataset independently, and preserves completed outputs when resumed. See [`../scripts/README.md`](../scripts/README.md) for checkpoint discovery, code-unit overrides, output layout, and baseline filtering.
+Run that command from the top-level repository root. The driver writes one config
+containing a `datasets:` list, runs each dataset independently, and preserves completed
+outputs when resumed. See the [top-level script guide](https://github.com/DogukanBaysal/Code-Unlearning/blob/main/scripts/README.md)
+for checkpoint discovery, code-unit overrides, output layout, and baseline filtering.
 
 ## Install
 
