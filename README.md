@@ -4,6 +4,13 @@ This is the independently versioned suffix-reconstruction evaluator for
 *Forgetting by Design*. The complete workflow pins it as a submodule in the
 [top-level experiment repository](https://github.com/DogukanBaysal/Code-Unlearning).
 
+Within **MOCHI (Machine Unlearning of Code with Hidden Information)**, suffix
+reconstruction measures whether an unlearned model can still recover a planted secret
+or a complete code-unit body from its prefix. It supplies the thesis's forget-quality
+signal for RQ1 and RQ2 and the reconstruction-based retention checks used throughout
+the study. These results are interpreted together with functional correctness and GPU
+energy rather than as a stand-alone measure of unlearning success.
+
 This project evaluates a Hugging Face causal language model on a Hugging Face dataset by:
 
 1. Reading a prefix, target suffix, and UUID from each dataset row.
